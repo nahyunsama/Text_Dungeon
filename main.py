@@ -1,3 +1,5 @@
+#def fight():
+
 def map_print(map_list):
     print('\n'.join(map(''.join, map_list)))
     
@@ -10,6 +12,7 @@ def stage_1():
     map_print(stage_1_map)
     user_x_y_before = [0,0]
     user_x_y = [2,2]
+    monster_x_y = [1,2]
     print("")
     while(True):
         print("> choice your move")
@@ -35,8 +38,6 @@ def stage_1():
                     print("")
                     user_x_y = user_x_y_before.copy()
                     user_x_y_before = [0, 0]
-
-                map_print(stage_1_map)
             
             case "2":
 
@@ -53,7 +54,7 @@ def stage_1():
                     user_x_y = user_x_y_before.copy()
                     user_x_y_before = [0, 0]
 
-                map_print(stage_1_map)
+
 
             case "3":
 
@@ -70,8 +71,6 @@ def stage_1():
                     user_x_y = user_x_y_before.copy()
                     user_x_y_before = [0, 0]
 
-                map_print(stage_1_map)
-
             case "4":
 
                 user_x_y_before = user_x_y.copy()
@@ -86,8 +85,14 @@ def stage_1():
                     print("")
                     user_x_y = user_x_y_before.copy()
                     user_x_y_before = [0, 0]
+            
+        
 
-                map_print(stage_1_map)
+        # if monster_x_y[0] == user_x_y[0] and monster_x_y[1] == user_x_y[1]:
+        #     print("fight!!")
+        #     fight()
+        
+        map_print(stage_1_map)
         
     
     
