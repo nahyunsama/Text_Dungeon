@@ -8,8 +8,8 @@ def stage_1():
                    ["="," ","U"," ","="],
                    ["=","=","=","=","="]]
     map_print(stage_1_map)
-    user_coordinate_before = [0,0]
-    user_coordinate = [2,2]
+    user_x_y_before = [0,0]
+    user_x_y = [2,2]
     print("")
     while(True):
         print("> choice your move")
@@ -23,71 +23,72 @@ def stage_1():
         match move_string:
             case "1":
             
-                user_coordinate_before = user_coordinate.copy()
-                user_coordinate[1] = user_coordinate[1] - 1
+                user_x_y_before = user_x_y.copy()
+                user_x_y[1] = user_x_y[1] - 1
             
-                if stage_1_map[user_coordinate[0]][user_coordinate[1]] != "=":
-                    stage_1_map[user_coordinate[0]][user_coordinate[1]] = "U"
-                    stage_1_map[user_coordinate_before[0]][user_coordinate_before[1]] = " "
-                    user_coordinate_before = [0, 0]
+                if stage_1_map[user_x_y[0]][user_x_y[1]] != "=":
+                    stage_1_map[user_x_y[0]][user_x_y[1]] = "U"
+                    stage_1_map[user_x_y_before[0]][user_x_y_before[1]] = " "
+                    user_x_y_before = [0, 0]
                 else:
                     print("> Here is the wall!")
                     print("")
-                    user_coordinate = user_coordinate_before.copy()
-                    user_coordinate_before = [0, 0]
+                    user_x_y = user_x_y_before.copy()
+                    user_x_y_before = [0, 0]
 
                 map_print(stage_1_map)
             
             case "2":
 
-                user_coordinate_before = user_coordinate.copy()
-                user_coordinate[0] = user_coordinate[0] - 1
+                user_x_y_before = user_x_y.copy()
+                user_x_y[0] = user_x_y[0] - 1
             
-                if stage_1_map[user_coordinate[0]][user_coordinate[1]] != "=":
-                    stage_1_map[user_coordinate[0]][user_coordinate[1]] = "U"
-                    stage_1_map[user_coordinate_before[0]][user_coordinate_before[1]] = " "
-                    user_coordinate_before = [0, 0]
+                if stage_1_map[user_x_y[0]][user_x_y[1]] != "=":
+                    stage_1_map[user_x_y[0]][user_x_y[1]] = "U"
+                    stage_1_map[user_x_y_before[0]][user_x_y_before[1]] = " "
+                    user_x_y_before = [0, 0]
                 else:
                     print("> Here is the wall!")
                     print("")
-                    user_coordinate = user_coordinate_before.copy()
-                    user_coordinate_before = [0, 0]
+                    user_x_y = user_x_y_before.copy()
+                    user_x_y_before = [0, 0]
 
                 map_print(stage_1_map)
 
             case "3":
 
-                user_coordinate_before = user_coordinate.copy()
-                user_coordinate[0] = user_coordinate[0] + 1
+                user_x_y_before = user_x_y.copy()
+                user_x_y[0] = user_x_y[0] + 1
             
-                if stage_1_map[user_coordinate[0]][user_coordinate[1]] != "=":
-                    stage_1_map[user_coordinate[0]][user_coordinate[1]] = "U"
-                    stage_1_map[user_coordinate_before[0]][user_coordinate_before[1]] = " "
-                    user_coordinate_before = [0, 0]
+                if stage_1_map[user_x_y[0]][user_x_y[1]] != "=":
+                    stage_1_map[user_x_y[0]][user_x_y[1]] = "U"
+                    stage_1_map[user_x_y_before[0]][user_x_y_before[1]] = " "
+                    user_x_y_before = [0, 0]
                 else:
                     print("> Here is the wall!")
                     print("")
-                    user_coordinate = user_coordinate_before.copy()
-                    user_coordinate_before = [0, 0]
+                    user_x_y = user_x_y_before.copy()
+                    user_x_y_before = [0, 0]
 
                 map_print(stage_1_map)
 
             case "4":
 
-                user_coordinate_before = user_coordinate.copy()
-                user_coordinate[1] = user_coordinate[1] + 1
+                user_x_y_before = user_x_y.copy()
+                user_x_y[1] = user_x_y[1] + 1
             
-                if stage_1_map[user_coordinate[0]][user_coordinate[1]] != "=":
-                    stage_1_map[user_coordinate[0]][user_coordinate[1]] = "U"
-                    stage_1_map[user_coordinate_before[0]][user_coordinate_before[1]] = " "
-                    user_coordinate_before = [0, 0]
+                if stage_1_map[user_x_y[0]][user_x_y[1]] != "=":
+                    stage_1_map[user_x_y[0]][user_x_y[1]] = "U"
+                    stage_1_map[user_x_y_before[0]][user_x_y_before[1]] = " "
+                    user_x_y_before = [0, 0]
                 else:
                     print("> Here is the wall!")
                     print("")
-                    user_coordinate = user_coordinate_before.copy()
-                    user_coordinate_before = [0, 0]
+                    user_x_y = user_x_y_before.copy()
+                    user_x_y_before = [0, 0]
 
                 map_print(stage_1_map)
+        
     
     
 
