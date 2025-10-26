@@ -1,4 +1,68 @@
-#def fight():
+import random
+
+def fight():
+    player_HP = 100
+    monster_HP = 100
+    player_attack = 10
+    monster_attack = 10
+    player_defense = 5
+    monster_defense = 5
+
+    while player_HP != 0 or monster_HP != 0:
+        print(f"> player HP {player_HP}")
+        print(f"> monster HP {monster_HP}")
+        print("")
+        print("> choice your action")
+        print("> attack  : 1")
+        print("> defense : 2")
+        print("> Avoid   : 3")
+        print("")
+        player_decision = int(input())
+
+        if player_decision == 1:
+            print("player is attack")
+            player_attack_weight = random.randrange(-2, 3)
+            player_denfense_weight = random.randrange(-2, 3)
+            monster_attack_weight = random.randrange(-2, 3)
+            monster_denfense_weight = random.randrange(-2, 3)
+
+            if monster_HP > monster_HP + monster_defense + monster_denfense_weight - player_attack + player_attack_weight:
+                monster_HP = monster_HP + monster_defense + monster_denfense_weight - player_attack + player_attack_weight
+                print(f"monster has gotten {player_attack + player_attack_weight - monster_defense + monster_denfense_weight} damage")
+            else:
+                print("monster defense is too high so take 1 damage")
+                monster_HP = monster_HP - 1
+
+            print("monster is attack")
+            if player_HP > player_HP + player_defense + player_denfense_weight - monster_attack + monster_attack_weight:
+                player_HP = player_HP + player_defense + player_denfense_weight - monster_attack + monster_attack_weight
+                print(f"player has gotten {monster_attack + monster_attack_weight - player_defense + player_denfense_weight} damage")
+            else:
+                print("player denfense is too high so take 1 damage")
+                play_HP = player_HP - 1
+
+        elif player_decision == 2:
+            print("player is denfense")
+            if player_HP > player_HP + player_defense + player_denfense_weight - int((monster_attack + monster_attack_weight)/2):
+                player_HP = player_HP + player_defense + player_denfense_weight - int((monster_attack + monster_attack_weight)/2)
+                print(f"player has gotten {int((monster_attack + monster_attack_weight)/2) - player_defense + player_denfense_weight} damage")
+            else:
+                print("player denfense is too high so take 1 damage")
+                play_HP = player_HP - 1
+
+        elif player_decision == 3:
+            print("player is Avoid")
+            player_avoid = random.randrange(1, 7)
+            if player_avoid == 1:
+                print("player avoid is success")
+            else:
+                print("player avoid is fail")
+                if player_HP > player_HP + player_defense - monster_attack:
+                    player_HP = player_HP + player_defense + player_denfense_weight - monster_attack + monster_attack_weight
+                    print(f"player has gotten {player_defense + player_denfense_weight - monster_attack + monster_attack_weight} damage")
+        else:
+            print("please choice again")
+
 
 def map_print(map_list):
     print('\n'.join(map(''.join, map_list)))
@@ -88,9 +152,9 @@ def stage_1():
             
         
 
-        # if monster_x_y[0] == user_x_y[0] and monster_x_y[1] == user_x_y[1]:
-        #     print("fight!!")
-        #     fight()
+        if monster_x_y[0] == user_x_y[0] and monster_x_y[1] == user_x_y[1]:
+            print("Let's fight!!")
+            fight()
         
         map_print(stage_1_map)
         
