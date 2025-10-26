@@ -1,3 +1,7 @@
+#TODO
+#check the player and monster damage calculation
+#And total calculation from expression to variable
+
 import random
 
 def fight():
