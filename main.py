@@ -10,6 +10,7 @@ def fight():
     monster_attack = 7
     player_defense = 1
     monster_defense = 1
+    # alive var == 0: both death
     # alive var == 1: player alive
     # alive var == 2: monster alive
     # alive var == 3: both alive
@@ -19,7 +20,7 @@ def fight():
         if wrong_count == 10:
             print("What's WRONG with YOU!")
             print("I'M OUT IT!")
-            alive = 0
+            alive = -1
             break
 
         print(f"> player HP {player_HP}")
