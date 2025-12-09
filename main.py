@@ -210,6 +210,7 @@ def stage_1():
                 break
             elif alive == 0:
                 print("LOVE SHOT! GAN-PAI")
+                break
             else:
                 print ("GoodBYE!")
                 break
