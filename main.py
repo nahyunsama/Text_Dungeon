@@ -186,14 +186,14 @@ def stage_1():
             print("Let's fight!!")
             alive = fight()
 
-        if alive == 1:
-            monster_x_y[0] = -1
-            monster_x_y[1] = -1
-            print("YOU WIN!")
-            break
-        elif alive == 2:
-            print("Player Lose")
-            break
+            if alive == 1:
+                monster_x_y[0] = -1
+                monster_x_y[1] = -1
+                print("YOU WIN!")
+                break
+            elif alive == 2:
+                print("Player Lose")
+                break
 
         
         map_print(stage_1_map)
