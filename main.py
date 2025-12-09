@@ -14,8 +14,14 @@ def fight():
     # alive var == 2: monster alive
     # alive var == 3: both alive
     alive = 3
-
+    wrong_count = 0
     while player_HP > 0 and monster_HP > 0:
+        if wrong_count == 10:
+            print("What's WRONG with YOU!")
+            print("I'M OUT IT!")
+            alive = 0
+            break
+
         print(f"> player HP {player_HP}")
         print(f"> monster HP {monster_HP}")
         print("")
@@ -24,7 +30,15 @@ def fight():
         print("> defense : 2")
         print("> Avoid   : 3")
         print("")
-        player_decision = int(input())
+        print("")
+        try:
+            player_decision = int(input())
+        except ValueError:
+            print("WRONG INPUT!")
+            print("")
+
+            wrong_count = wrong_count + 1
+            continue
 
         player_attack_weight = random.randrange(-2, 3)
         player_denfense_weight = random.randrange(-2, 3)
@@ -193,6 +207,9 @@ def stage_1():
                 break
             elif alive == 2:
                 print("Player Lose")
+                break
+            else:
+                print ("GoodBYE!")
                 break
 
         
