@@ -10,8 +10,12 @@ def fight():
     monster_attack = 7
     player_defense = 1
     monster_defense = 1
+    # alive var == 1: player alive
+    # alive var == 2: monster alive
+    # alive var == 3: both alive
+    alive = 3
 
-    while player_HP > 0 or monster_HP > 0:
+    while player_HP > 0 and monster_HP > 0:
         print(f"> player HP {player_HP}")
         print(f"> monster HP {monster_HP}")
         print("")
@@ -22,17 +26,18 @@ def fight():
         print("")
         player_decision = int(input())
 
+        player_attack_weight = random.randrange(-2, 3)
+        player_denfense_weight = random.randrange(-2, 3)
+        monster_attack_weight = random.randrange(-2, 3)
+        monster_denfense_weight = random.randrange(-2, 3)
+
+        monster_defense_delta = monster_defense + monster_denfense_weight
+        monster_attack_delta = monster_attack + monster_attack_weight
+        player_defense_delta = player_defense + player_denfense_weight
+        player_attack_delta = player_attack + player_attack_weight
+
         if player_decision == 1:
             print("player is attack")
-            player_attack_weight = random.randrange(-2, 3)
-            player_denfense_weight = random.randrange(-2, 3)
-            monster_attack_weight = random.randrange(-2, 3)
-            monster_denfense_weight = random.randrange(-2, 3)
-
-            monster_defense_delta = monster_defense + monster_denfense_weight
-            monster_attack_delta = monster_attack + monster_attack_weight
-            player_defense_delta = player_defense + player_denfense_weight
-            player_attack_delta = player_attack + player_attack_weight
 
             if player_attack_delta > monster_defense_delta:
                 monster_HP = monster_HP + monster_defense_delta - player_attack_delta
@@ -77,6 +82,16 @@ def fight():
             print("")
         else:
             print("please choice again")
+        
+        if player_HP > 0 and monster_HP > 0:
+            alive = 3
+        elif player_HP <= 0 and monster_HP > 0:
+            alive = 2
+        elif player_HP > 0 and monster_HP <= 0:
+            alive = 1
+        else:
+            alive = 0
+    return alive
 
 
 def map_print(map_list):
@@ -169,7 +184,17 @@ def stage_1():
 
         if monster_x_y[0] == user_x_y[0] and monster_x_y[1] == user_x_y[1]:
             print("Let's fight!!")
-            fight()
+            alive = fight()
+
+        if alive == 1:
+            monster_x_y[0] = -1
+            monster_x_y[1] = -1
+            print("YOU WIN!")
+            break
+        elif alive == 2:
+            print("Player Lose")
+            break
+
         
         map_print(stage_1_map)
         
