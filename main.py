@@ -67,7 +67,7 @@ def fight():
                 print(f"player has gotten {monster_attack_delta - player_defense_delta} damage")
             else:
                 print("player denfense is too high so take 1 damage")
-                play_HP = player_HP - 1
+                player_HP = player_HP - 1
             print("")
 
         elif player_decision == 2:
@@ -77,7 +77,7 @@ def fight():
                 print(f"player has gotten {int(monster_attack_delta/2) - player_defense_delta} damage")
             else:
                 print("player denfense is too high so take 1 damage")
-                play_HP = player_HP - 1
+                player_HP = player_HP - 1
             print("")
 
         elif player_decision == 3:
@@ -92,7 +92,7 @@ def fight():
                     print(f"player has gotten {monster_attack_delta - player_defense_delta} damage")
                 else:
                     print("player denfense is too high so take 1 damage")
-                    play_HP = player_HP - 1
+                    player_HP = player_HP - 1
             print("")
         else:
             print("please choice again")
