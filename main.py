@@ -224,13 +224,13 @@ def stage_1():
 
 def main():
     print("> Hello from text-dungeon!")
-    print("> Please Enter the 1 to start")
+    print("> PRESS ANY KEY")
     print("")
-    menu_string = str(input())
-    if menu_string == "1":
-        print("")
-        print("> Game Start!")
-        stage_1()
+    input()
+    
+    print("")
+    print("> Game Start!")
+    stage_1()
 
 
 if __name__ == "__main__":
