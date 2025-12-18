@@ -1,7 +1,15 @@
-#TODO
-#Need to check the fight function while
-
 import random
+import sys
+
+
+from .game import Game
+
+game = Game()
+game.run()
+
+
+sys.exit()
+
 
 def fight():
     player_HP = 100
