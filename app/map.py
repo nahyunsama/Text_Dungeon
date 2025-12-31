@@ -15,8 +15,8 @@ class Map:
                 user_y = 2
                 user_x_before = 0
                 user_y_before = 0
-                monster_x = 1
-                monster_y = 2
+                monster_x = 2
+                monster_y = 1
                 #user_xy_before = [0,0]
                 #user_xy = [2,2]
                 #monster_xy = [1,2]
