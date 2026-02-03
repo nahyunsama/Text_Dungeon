@@ -1,3 +1,4 @@
+import random
 
 def fight():
     player_HP = 100
