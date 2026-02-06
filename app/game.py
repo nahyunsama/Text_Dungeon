@@ -1,11 +1,14 @@
-from .map import Map
+from map import Map
 import copy
+from unit import Player, Monster
 
 class Game:
 
     def __init__(self):
         self.stage = 0
         self.init_flag = 0
+        self.player = Player("Player", hp=100, atk=10, dfs=1, row=2, col=2, icon="U")
+        self.monster = Monster("Monster", hp=100, atk=7, dfs=1, row=1, col=2, icon="*")
     def input_move(self):
         print("> choice your move")
         print("> left  : 1")
