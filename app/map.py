@@ -1,4 +1,4 @@
-# 유닛 이동 가능 확인
+import copy
 
 class Map:
 
@@ -9,22 +9,18 @@ class Map:
 
     STAGE_1_LORE = "Let's Tutrial"
 
-    @staticmethod
-    def unit_xy(stage):
-        match stage:
-            case 1:
-                user_x = 2
-                user_y = 2
-                user_x_before = 0
-                user_y_before = 0
-                monster_x = 2
-                monster_y = 1
-                #user_xy_before = [0,0]
-                #user_xy = [2,2]
-                #monster_xy = [1,2]
-        
-        return user_x, user_y, user_x_before, user_y_before, monster_x, monster_y
+    def __init__(self):
+        self.grid = copy.deepcopy(self.STAGE_1)
+    
+    def is_wall(self, row, col):
+        if self.grid[row][col] == "=":
+            return True
+        else:
+            return False
+    
+    def update_map(self, prev_row, prev_col, new_row, new_col, icon):
+        self.grid[prev_row][prev_col] = " "
+        self.grid[new_row][new_col] = icon
 
-    @staticmethod
-    def map_print(map_list):
-        print('\n'.join(map(''.join, map_list)))
+    def show(self):
+        print('\n'.join(map(''.join, self.grid)))

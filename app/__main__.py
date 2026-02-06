@@ -1,6 +1,4 @@
-import random
 import sys
-
 
 from .game import Game
 

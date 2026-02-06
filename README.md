@@ -12,5 +12,5 @@ Let's Start the Game!
 
 ```Bash
 $uv sync
-$uv run main.py
+$uv run python -m app
 ```
