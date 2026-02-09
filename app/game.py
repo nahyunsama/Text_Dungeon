@@ -47,7 +47,7 @@ class Game:
             print("> Welcome to Enter the Dungeon!")
             print("")
             battle = Battle(self.player, self.monster)
-            battle.start_battle()
+            battle.start_battle(self.stage)
 
 
 
