@@ -2,6 +2,7 @@
 
 from .map import Map
 from .unit import Player, Monster
+from .battle import Battle
 
 class Game:
 
@@ -42,8 +43,12 @@ class Game:
             print("")
         
         if self.player.row == self.monster.row and self.player.col == self.monster.col:
+            self.invalid_input = 0
             print("> Welcome to Enter the Dungeon!")
             print("")
+            battle = Battle(self.player, self.monster)
+            battle.start_battle()
+
 
 
     def run(self):
