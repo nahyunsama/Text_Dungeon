@@ -12,8 +12,8 @@ class Game:
         self.map_manager = Map()
         self.invalid_input = 0
 
-        self.player = Player("Player", hp=100, atk=10, dfs=1, row=2, col=2, icon="U")
-        self.monster = Monster("Monster", hp=100, atk=7, dfs=1, row=1, col=2, icon="*")
+        self.player = Player("Player", hp=100, atk=15, dfs=2, row=2, col=2, icon="U")
+        self.monster = Monster("Monster", hp=140, atk=10, dfs=3, row=1, col=2, icon="M")
 
     def input_move(self):
         print("> choice your move")
