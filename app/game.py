@@ -1,4 +1,4 @@
-## TODO: User input vaildation, game over, multiple stages, battle system, easter eggs
+## TODO: User input vaildation, game over, multiple stages, avoid logic, monster AI, Serveral monsters
 
 from .map import Map
 from .unit import Player, Monster
