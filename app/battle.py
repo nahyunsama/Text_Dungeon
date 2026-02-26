@@ -18,6 +18,8 @@ class Battle:
         # alive var == 3: both alive
         self.player_stun = False
         self.monster_stun = False
+        self.player_extra_turn = False
+        self.monster_extra_turn = False
 
 
     def start_battle(self, stage):
@@ -34,6 +36,8 @@ class Battle:
                 print(f"> {self.monster.name} is Stunned and cannot move!")
                 print("")
                 self.monster_stun = False
+            elif self.monster_extra_turn:
+                self.monster_extra_turn = False
             else:
                 match monster_decison:
                     case 1:
@@ -63,7 +67,8 @@ class Battle:
                 print(f"> {self.player.name} is Stunned and cannot move!")
                 print("")
                 self.player_stun = False
-
+            elif self.player_extra_turn:
+                self.player_extra_turn = False
             else:
                 print("> Choose your action")
                 print("> Attack   : 1")
@@ -164,8 +169,17 @@ class Battle:
             print(f"> {actor.name} attack damage: {damage}")
             target.hp -= damage
             print(f"> {target.name} HP: {target.hp}")
+            if actor == self.player:
+                self.monster_extra_turn = True
+            else:
+                self.player_extra_turn = True
+
         elif abs(input_int - avoid_target) == 1:
             print(f"> {actor.name} closely avoided!")
+            if actor == self.player:
+                self.monster_extra_turn = True
+            else:
+                self.player_extra_turn = True
         else:
             print(f"> {actor.name} failed to avoid!")
             print(f"> {actor.name} lost the balance")
@@ -177,6 +191,8 @@ class Battle:
             print(f"> {target.name} attack damage: {damage}")
             actor.hp -= damage
             print(f"> {actor.name} HP: {actor.hp}")
+            if actor == self.player:
+                self.monster_extra_turn = True
         
         print("")
         print("================================")
