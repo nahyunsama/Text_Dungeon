@@ -61,7 +61,7 @@ class Battle:
                 print("> DEFATED...")
                 print("")
                 self.alive = 2
-                break
+                return False
 
             if self.player_stun:
                 print(f"> {self.player.name} is Stunned and cannot move!")
@@ -96,7 +96,7 @@ class Battle:
                 print("> YOU WIN!")
                 print("")
                 self.alive = 1
-                break
+                return True
 
     def monster_decision(self, stage):
         if stage == 1:

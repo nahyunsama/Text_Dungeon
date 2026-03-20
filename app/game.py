@@ -13,7 +13,7 @@ class Game:
         self.invalid_input = 0
 
         self.player = Player("Player", hp=100, atk=15, dfs=2, row=2, col=2, icon="U")
-        self.monster = Monster("Monster", hp=140, atk=10, dfs=3, row=1, col=2, icon="M")
+        self.monster = Monster("Monster", hp=120, atk=10, dfs=3, row=1, col=2, icon="M")
 
     def input_move(self):
         print("> choice your move")
@@ -47,7 +47,11 @@ class Game:
             print("> Welcome to Enter the Dungeon!")
             print("")
             battle = Battle(self.player, self.monster)
-            battle.start_battle(self.stage)
+            Victory = battle.start_battle(self.stage)
+            if Victory:
+                self.stage = 2
+            else:
+                exit()
 
 
 
@@ -72,5 +76,8 @@ class Game:
                 else:
                     self.map_manager.show()
                     self.input_move()
+            elif self.stage == 2:
+                print("> Congratulations! You cleared the game!")
+                exit()
 
 
