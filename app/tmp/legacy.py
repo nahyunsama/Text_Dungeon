@@ -1,6 +1,3 @@
-#TODO
-#Need to check the fight function while
-
 import random
 
 def fight():
