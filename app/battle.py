@@ -151,7 +151,7 @@ class Battle:
         print("")
         print(f"> {actor.name} avoid: {target.name}")
         if actor == self.player:
-            print(f"> choice: 1 ~ 6")
+            print("> choice: 1 ~ 6")
             input_int = int(input())
             if input_int not in range(1,7):
                 print("> WRONG INPUT!")
